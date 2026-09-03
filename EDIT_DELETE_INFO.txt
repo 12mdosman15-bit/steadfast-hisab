@@ -1,0 +1,8 @@
+Final update:
+- Order Edit/Delete
+- COD Edit
+- Expense Edit/Delete
+- Supplier Payment Edit/Delete
+- Google Sheets sync remains enabled
+- Existing Steadfast/CN#/Tracking/District/Thana/Backup/Search features preserved
+- Local delete does not delete the Steadfast parcel

@@ -1,0 +1,23 @@
+GOOGLE SHEETS AUTO SYNC SETUP
+
+1) Create a Google Cloud project.
+2) Enable Google Sheets API.
+3) Create a Service Account and download its JSON key.
+4) Create/open the Google Sheet you want to use.
+5) Share that Google Sheet with the service-account email as Editor.
+6) In Railway -> Variables add:
+   GOOGLE_SHEET_ID = the ID from the Google Sheet URL
+   GOOGLE_SERVICE_ACCOUNT_JSON = the full contents of the downloaded JSON file
+   GOOGLE_SHEETS_ENABLED = true
+
+The app automatically creates these tabs:
+- Orders
+- Expenses
+- Supplier Payments
+
+Orders use Order ID as the stable row key. Editing an order in the app updates
+the same row in Google Sheets instead of creating a duplicate.
+COD, delivery charge, status, CN#, Tracking ID and other order fields sync too.
+
+If Google Sheets is temporarily unavailable, the app's own database remains the
+source of truth and the error is logged; the local save does not fail.
